@@ -1,0 +1,195 @@
+{{#partial "contenido" }}
+<div class="container">
+    <h2>Agregar nuevo tramo</h2>
+    <hr class="my-3 bg-dark">
+    <form {{#if tramo}} action="/miembro/{{idMiembro}}/trayectos/{{trayecto}}/tramos/{{tramo.id}}" {{else}} action="/miembro/{{idMiembro}}/trayectos/{{idTrayecto}}"{{/if}} method="post">
+        <div class="col-md-6 pr-2 pl-0 mb-2">
+            <label class="form-label">Medio de transporte</label>
+            <select name="medio" class="form-select" id="transporte-select">
+                <option selected disabled>Seleccionar...</option>
+                {{#each medios }}<option value="{{this}}">{{this}}</option>{{/each}}
+            </select>
+        </div>
+        <div class="row mb-2 d-none" id="subte">
+            <div class="col-md-3">
+                <label class="form-label">Linea</label>
+                <select name="l-subte" class="form-select" id="select-subte">
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-subte}}<option value="{{this.id}}">{{this.linea}}</option>{{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estacion inicial</label>
+                <select name="p-subte-inicial" class="form-select" >
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-subte}}
+                    {{#each this.paradas}}<option class="p-subte s-{{@../index}} d-none" value="{{this.id}}">{{this.nombre}}</option>{{/each}}
+                    {{/each}}
+                    
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estacion final</label>
+                <select name="p-subte-final" class="form-select" required >
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-subte}}
+                    {{#each this.paradas}}<option class="p-subte s-{{@../index}} d-none" value="{{this.id}}">{{this.nombre}}</option>{{/each}}
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="row mb-2 d-none" id="colectivo">
+            <div class="col-md-3">
+                <label class="form-label">Linea</label>
+                <select name="l-colectivo" class="form-select" id="select-bus">
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-colectivo}}<option value="{{this.id}}">{{this.linea}}</option>{{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estacion inicial</label>
+                <select name="p-colectivo-inicial" class="form-select" >
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-colectivo}}
+                    {{#each this.paradas}}<option class="p-bus b-{{@../index}} d-none"  value="{{this.id}}">{{this.nombre}}</option>{{/each}}
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estacion final</label>
+                <select name="p-colectivo-final" class="form-select" >
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-colectivo}}
+                    {{#each this.paradas}}<option class="p-bus b-{{@../index}} d-none"  value="{{this.id}}">{{this.nombre}}</option>{{/each}}
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="row mb-2 d-none" id="tren">
+            <div class="col-md-3">
+                <label class="form-label">Linea</label>
+                <select name="l-tren" class="form-select" id="select-tren">
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-tren}}<option value="{{this.id}}">{{this.linea}}</option>{{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estacion inicial</label>
+                <select name="p-tren-inicial" class="form-select" >
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-tren}}
+                    {{#each this.paradas}}<option class="p-tren b-{{@../index}} d-none" value="{{this.id}}">{{this.nombre}}</option>{{/each}}
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estacion final</label>
+                <select name="p-tren-final" class="form-select" >
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each lineas-tren}}
+                    {{#each this.paradas}}<option class="p-tren b-{{@../index}} d-none" value="{{this.id}}">{{this.nombre}}</option>{{/each}}
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <hr class="my-3 bg-dark">
+        <div id="tramo-partida" class="mb-2">
+            <h3 class="fs-6">Punto de Partida</h3>
+            <div class="row">
+                <div class="col-md-3">
+                <label class="form-label">Calle</label>
+                <input type="text" name="calle-partida" class="form-control" required {{#if tramo}} value="{{puntoPartida.calle}}" {{else}}disabled{{/if}} >
+                </div>
+                <div class="col-md-3">
+                <label class="form-label">Altura</label>
+                <input type="text" name="altura-partida" class="form-control" required {{#if tramo}} value="{{puntoPartida.altura}}" {{else}}  disabled{{/if}}>
+                </div>
+                <div class="col-md-3">
+                <label class="form-label">Piso</label>
+                <input type="text" name="piso-partida" class="form-control" {{#if tramo}} value="{{puntoPartida.piso}}" {{else}} disabled{{/if}}>
+                </div>
+                <div class="col-md-3">
+                <label class="form-label">Localidad</label>
+                <input type="text" name="localidad-partida" class="form-control" {{#if tramo}} value="{{puntoPartida.localidadID}}" {{else}} value="3" disabled{{/if}}>
+                </div>
+            </div>
+        </div>
+        <div id="tramo-destino">
+            <h3 class="fs-6">Punto de Destino</h3>
+            <div class="row">
+                <div class="col-md-3">
+                <label class="form-label">Calle</label>
+                <input type="text" name="calle-destino" class="form-control" required {{#if tramo}} value="{{puntoDestino.calle}}" {{else}}disabled{{/if}}>
+                </div>
+                <div class="col-md-3">
+                <label class="form-label">Altura</label>
+                <input type="text" name="altura-destino" class="form-control" required {{#if tramo}} value="{{puntoDestino.altura}}" {{else}}disabled{{/if}}>
+                </div>
+                <div class="col-md-3">
+                <label class="form-label">Piso</label>
+                <input type="text" name="piso-destino" class="form-control" {{#if tramo}} value="{{puntoDestino.piso}}" {{else}}disabled{{/if}}>
+                </div>
+                <div class="col-md-3">
+                <label class="form-label">Localidad</label>
+                <input type="text" name="localidad-destino" class="form-control" {{#if tramo}} value="{{puntoPartida.localidadID}}" {{else}} value="5" disabled{{/if}}>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-3" id="tipo-combustible">
+                <label class="form-label">Tipo de combustible</label>
+                <select name="combustible" id="combustible-select" class="form-select" disabled>
+                    <option selected disabled>Seleccionar...</option>
+                    {{#each combustibles}}<option value="{{this}}">{{this}}</option>{{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Nombre del servicio</label>
+                <input type="text" name="servicio" class="form-control" id="servicio-contratado" disabled>
+            </div>
+        </div>
+        <div class="form-check ml-1 mb-2">
+            <input class="form-check-input" type="checkbox" name="compartido" id="compartido-check" disabled>
+            <label class="form-check-label" for="compartido-check">Viaje compartido</label>
+            <a class="text-secondary ml-3 d-none" id="agregar-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Agregar miembro</a>
+        </div>
+        <div id="miembros" class="mt"></div>
+        <button type="submit" name="" class="btn btn-success mt-4">Guardar tramo</button>
+    </form>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar miembro a viaje</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="id-acompaniante" class="form-control" placeholder="Ingresar ID acompañante">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="agregarMiembro()" data-bs-dismiss="modal">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/tramo.js"></script>
+    <script>
+        
+        funcion setearTransporte (){
+
+        
+
+        }
+
+
+
+        {{#if tramo}}
+        setearTransporte();
+        {{/if}}
+    </script>
+</div>
+{{/partial}}
+{{> miembro/miembro.hbs }}

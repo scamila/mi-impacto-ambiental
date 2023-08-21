@@ -1,0 +1,118 @@
+{{#partial "contenido" }}
+<select name="Sector" id="globalstyleselect" onchange="myFunction()">
+  <option value="0">Seleccion</option>
+  <option value="1">Palermo</option>
+  <option value="2">Villa Urquiza</option>
+  <option value="3">Lugano</option>
+  <option value="4">Salta</option>
+</select>
+
+<table style="display:none" class="table" id="tabla_1">
+  <thead>
+    <tr>
+      <th scope="col">Sector</th>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Huella de carbono</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each huellaDeSectores.[0].organizaciones}}
+    <tr>
+      <td>Palermo</td>
+      <td>{{this.razonSocial}}</td>
+      <td>{{this.huellaAnual}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<table style="display:none" class="table" id="tabla_2">
+  <thead>
+    <tr>
+      <th scope="col">Sector</th>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Huella de carbono</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each huellaDeSectores.[1].organizaciones}}
+    <tr>
+      <td>Villa Urquiza</td>
+      <td>{{this.razonSocial}}</td>
+      <td>{{this.huellaAnual}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<table style="display:none" class="table" id="tabla_3">
+  <thead>
+    <tr>
+      <th scope="col">Sector</th>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Huella de carbono</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each huellaDeSectores.[2].organizaciones}}
+    <tr>
+      <td>Lugano</td>
+      <td>{{this.razonSocial}}</td>
+      <td>{{this.huellaAnual}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table><table style="display:none" class="table" id="tabla_4">
+  <thead>
+    <tr>
+      <th scope="col">Sector</th>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Huella de carbono</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each huellaDeSectores.[3].organizaciones}}
+    <tr>
+      <td>Salta</td>
+      <td>{{this.razonSocial}}</td>
+      <td>{{this.huellaAnual}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<script>
+function myFunction() {
+  var options = document.getElementById("globalstyleselect").options;
+  var e = document.getElementById("globalstyleselect");
+  var strUser = e.options[e.selectedIndex].value;
+
+
+  if (strUser == "1") {
+    document.getElementById("tabla_1").style.display = "block";
+  }
+  else {
+    document.getElementById("tabla_1").style.display = "none";
+  }
+
+  if (strUser == "2") {
+    document.getElementById("tabla_2").style.display = "block";
+  }
+  else {
+    document.getElementById("tabla_2").style.display = "none";
+  }
+  if (strUser == "3") {
+    document.getElementById("tabla_3").style.display = "block";
+  }
+  else {
+    document.getElementById("tabla_3").style.display = "none";
+  }
+  if (strUser == "4") {
+    document.getElementById("tabla_4").style.display = "block";
+  }
+  else {
+    document.getElementById("tabla_4").style.display = "none";
+  }
+}
+</script>
+
+{{/partial}}
+{{>miembro/miembro.hbs }}

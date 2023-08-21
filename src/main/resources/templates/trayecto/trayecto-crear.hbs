@@ -1,0 +1,21 @@
+{{#partial "contenido" }}
+<div class="container p-5">
+<form action="/miembro/{{idMiembro}}/trayectos" method="post" class="m-5">
+    <h4 class="mb-3">Nuevo trayecto</h4>
+	<div class="col mb-3 p-0">
+		<label class="form-label">Organización</label>
+		<select name="organizacion" class="form-select" required>
+            <option selected disabled>Elige la organizacion de destino</option>
+            {{#each organizaciones}}
+            <option value="{{id}}">{{razonSocial}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <!--<label class="form-label">Punto de partida</label>
+        <input type="text" name="punto-partida" class="form-control" placeholder="Elige la direccion de salida" required>-->
+	</div>
+	<button type="submit" name="" class="btn btn-success">Guardar</button>
+</form>
+</div>
+{{/partial}}
+{{> 'miembro/miembro.hbs' }}

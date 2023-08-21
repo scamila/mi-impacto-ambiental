@@ -1,0 +1,68 @@
+{{#partial "ccs"}}
+<link rel="stylesheet" href = "/css/trayectos.css">
+{{/partial}}
+{{#partial "contenido" }}
+<div class="container">
+    <div class="d-flex justify-content-md-between align-items-center">
+        <h2>Trayectos</h2>
+        <a class="btn btn-success " href="trayectos/crear">Agregar trayecto</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Organización</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each trayectos}}
+            <tr>
+                <td>{{empleado.organizacion.razonSocial}}</td>
+                <td>
+                    <a class="btn btn-outline-success" href="trayectos/{{id}}/tramos">Tramos</a>
+                    <a class="btn btn-outline-danger" onclick="confirmarEliminacion({{id}})" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar trayecto</a>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input id="trayectoId" type="hidden" value="">
+                <p>¿Desea eliminar el tramo?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" onclick="eliminarTrayecto()" data-bs-dismiss="modal">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function confirmarEliminacion(id){
+        document.getElementById("trayectoId").value = id;
+    }
+
+    function eliminarTrayecto(){
+        var id = document.getElementById("trayectoId").value;
+        $.ajax({
+            type: "DELETE",
+            url: "trayectos/"+id,
+            success: function(result){
+                location.reload(true);
+            }
+        });
+    }
+
+</script>
+{{/partial}}
+
+{{> miembro/miembro.hbs }}

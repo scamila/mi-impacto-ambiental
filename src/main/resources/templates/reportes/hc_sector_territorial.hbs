@@ -1,0 +1,19 @@
+{{#partial "contenido" }}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sector Territorial</th>
+      <th scope="col">Huella</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each huellas}}
+    <tr>
+      <td>{{this.nombreSector}}</td>
+      <td>{{this.huella}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/partial}}
+{{>organizaciones/organizacion-base.hbs }}

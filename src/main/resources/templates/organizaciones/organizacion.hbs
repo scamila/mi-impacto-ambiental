@@ -1,0 +1,11 @@
+{{#partial "contenido" }}
+<form method="POST">
+	<div class="form-group">
+		<label>Nombre</label>
+		<input name="nombre" placeholder="Nombre" value="{{ organizacion.razonSocial }}">
+	</div>
+	<button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{{/partial}}
+{{> organizaciones/organizacion-base.hbs }}
+{{!--REVISAR CUANDO SE MUESTRA ESTE TEMPLATE--}}

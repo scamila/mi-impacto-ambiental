@@ -1,0 +1,77 @@
+{{#partial "contenido" }}
+<select name="Sector" id="globalstyleselect" onchange="myFunction()">
+   <option value="0">Seleccion</option>
+   {{#each huellas}}
+   <option value={{@index_1}}>{{this.sector}}</option>
+   {{/each}}
+</select>
+
+<table style="display:none" class="table" id="tabla_1">
+  <thead>
+    <tr>
+      <th scope="col">Sector</th>
+      <th scope="col">MesAnio</th>
+      <th scope="col">Huella</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each huellas.[0].huellasPorFecha}}
+    <tr>
+      <td>{{huellas.[0].sector}}</td>
+      <td>{{this.mesAnio}}</td>
+      <td>{{this.huellaCarbono}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<table style="display:none" class="table" id="tabla_2">
+  <thead>
+    <tr>
+      <th scope="col">Sector</th>
+      <th scope="col">MesAnio</th>
+      <th scope="col">Huella</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each huellas.[1].huellasPorFecha}}
+    <tr>
+      <td>{{huellas.[1].sector}}</td>
+      <td>{{this.mesAnio}}</td>
+      <td>{{this.huellaCarbono}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<script>
+function myFunction() {
+  var options = document.getElementById("globalstyleselect").options;
+  var e = document.getElementById("globalstyleselect");
+  var strUser = e.options[e.selectedIndex].value;
+
+
+  if (strUser == "1") {
+    document.getElementById("tabla_1").style.display = "block";
+  }
+  else {
+    document.getElementById("tabla_1").style.display = "none";
+  }
+
+  if (strUser == "2") {
+    document.getElementById("tabla_2").style.display = "block";
+  }
+  else {
+    document.getElementById("tabla_2").style.display = "none";
+  }
+  if (strUser == "3") {
+     document.getElementById("tabla_3").style.display = "block";
+  }
+  else {
+     document.getElementById("tabla_3").style.display = "none";
+  }
+}
+</script>
+
+{{/partial}}
+{{>miembro/miembro.hbs }}

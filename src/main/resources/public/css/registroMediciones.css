@@ -1,0 +1,71 @@
+input[type="file"]{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+input[type="submit"]{
+    position: absolute;
+    top: -9999px;
+    right: -9999px;
+}
+
+label{
+    background-color: darkolivegreen;
+    color:white;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: all ease-out 200ms;
+
+}
+
+p{
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+}
+label:not(.chosen):hover{
+    background: darkgreen;
+    box-shadow: 0 0 10px 0 darkgreen;
+    align-items: center;
+}
+
+label img{
+    width:30px;
+    margin-right:10px;
+    background: darkolivegreen;
+}
+
+label.chosen{
+    
+}
+
+#upload-btn{
+    font-family: 'Montserrat',sans-serif;
+    background-color: darkolivegreen;
+    border: none;
+    display: inline-flex;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 5px 15px 5px 15px;
+    align-items: center;
+    width:fit-content;
+}
+
+#submit{
+    font-family: 'Montserrat',sans-serif;
+    background-color: darkolivegreen;
+    border: none;
+    float:right;
+    display: inline-flex;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 5px 15px 5px 15px;
+    align-items:center;
+}

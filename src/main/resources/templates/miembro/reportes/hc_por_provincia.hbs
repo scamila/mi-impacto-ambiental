@@ -1,0 +1,22 @@
+{{#partial "contenido" }}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Provincia</th>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Huella de carbono</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each huellas}}
+    <tr>
+      <td>{{this.provincia}}</td>
+      <td>{{this.razonSocial}}</td>
+      <td>{{this.huellaTotal}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{/partial}}
+{{>miembro/miembro.hbs}}

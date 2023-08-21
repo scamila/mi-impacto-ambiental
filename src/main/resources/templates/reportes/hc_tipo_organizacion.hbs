@@ -1,0 +1,21 @@
+{{#partial "contenido" }}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Empresa</th>
+      <th scope="col">Gubernamental</th>
+      <th scope="col">Institucion</th>
+      <th scope="col">ONG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{organizaciones.huellaEmpresa}}</td>
+      <td>{{organizaciones.huellaGubernamental}}</td>
+      <td>{{organizaciones.huellaInstitucion}}</td>
+      <td>{{organizaciones.huellaOng}}</td>
+    </tr>
+  </tbody>
+</table>
+{{/partial}}
+{{>organizaciones/organizacion-base.hbs }}

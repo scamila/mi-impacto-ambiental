@@ -1,0 +1,29 @@
+{{#partial "css"}}
+<link href="/css/login.css" rel="stylesheet" id="bootstrap-css">
+{{/partial}}
+{{#partial "contenido" }}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="img/mediciones/fondoEcologico.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form method="POST" action="/login">
+      <input type="text" id="login" class="fadeIn second" name="nombre_de_usuario" placeholder="Nombre de usuario">
+      <input type="text" id="password" class="fadeIn third" name="contrasenia" placeholder="Contraseña">
+      <input type="submit" class="fadeIn fourth" value="Ingresar">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+{{/partial}}
+{{> base_bootstrap.hbs }}

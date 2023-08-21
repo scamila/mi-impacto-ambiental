@@ -1,0 +1,51 @@
+{{#partial "contenido"}}
+<div class="container">
+  <div class="d-flex justify-content-md-between align-items-center">
+    <h2>Calculadora de huella de carbono</h1>
+    <button class="btn btn-success " onclick="recargar()">CALCULAR</button>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+          <h2>HUELLA ANUAL</h2>
+          <h1 class="card-title pricing-card-title fs-1">{{organizacion.huellaAnual}}
+            <small class="text-muted fw-light fs-6">kgCO2eq</small></h1>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+          <h2>HUELLA MENSUAL</h2>
+          <h1 class="card-title pricing-card-title fs-1">{{huellaMensual}}<small
+              class="text-muted fw-light fs-6">kgCO2eq</small></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">Sector</th>
+        <th scope="col">Huella por cantidad de miembros</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each sectores}}
+      <tr>
+        <td>{{this.nombre}}</td>
+        <td>{{this.proporcionHuella}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<script>
+
+  function recargar(){
+    location.reload(true);
+  }
+</script>
+{{/partial}}
+{{> organizaciones/organizacion-base.hbs}}

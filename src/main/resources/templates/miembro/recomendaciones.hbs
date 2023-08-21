@@ -1,0 +1,36 @@
+{{#partial "contenido"}}
+<div class="container">
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Problemática</a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Como calculamos la huella de carbono</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Colapsar</button>
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+          La latente,  presente  y creciente  preocupación  internacional  por  las  consecuencias  adversas  del  cambio climático ha impulsadoa las organizaciones
+          e instituciones a profundizar su conocimiento respecto de los gases  de  efecto  invernadero  y  su  dinámica. La  huella  ecológica  mide  la cantidad  de  agua,
+          aire y  tierra biológicamente productiva necesaria para producir los recursos requeridos por un individuo o población para su  consumo
+          y  para  absorber  sus  residuos,  utilizando  la  tecnología  existente  y  prácticas  de  gestión  de recursos (Ewing et al., 2008).
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+          Tras recopilar los datos de actividad de los flujos de entrada y salida, de acuerdo con la unidad funcional detallada,
+          se procede a multiplicar tales valores por los factores de emisión para estimar la huella.
+          <div class="badge bg-primary text-wrap" style="width: 25rem;">
+            𝐻𝑢𝑒𝑙𝑙𝑎𝑑𝑒𝑐𝑎𝑟𝑏𝑜𝑛𝑜=𝐷𝑎𝑡𝑜𝐴𝑐𝑡𝑖𝑣𝑖𝑑𝑎𝑑(𝐷𝐴)𝑥𝐹𝑎𝑐𝑡𝑜𝑟𝐸𝑚𝑖𝑠𝑖ó𝑛(𝐹𝐸)
+          </div>
+          Donde los FE se multiplican por los datos de actividad para calcular las emisiones de GEI de cada una de ellas.
+          Es importante prestar atención a las unidades de medición de los datos recopilados y su congruencia con los FE para evitar posibles errores en el cálculo.
+          Los resultados pueden ser expresados en gramo equivalente carbono –𝑔𝐶𝑂2𝑒𝑞, o sus múltiplos, kilogramo equivalente de carbono –𝑘𝑔𝐶𝑂2𝑒𝑞otonelada equivalente –𝑡𝑛𝐶𝑂2𝑒𝑞.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/partial}}
+{{>miembro/miembro.hbs}}

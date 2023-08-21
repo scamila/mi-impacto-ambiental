@@ -1,0 +1,21 @@
+{{#partial "contenido" }}
+<div class="container">
+  <h2>Mis organizaciones</h2>
+  <div class="row">
+    {{#each organizaciones}}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{razonSocial}}</h5>
+          <p class="card-text">{{tipo}}</p>
+          <a href="/organizaciones/{{id}}/mediciones" class="btn btn-primary">Editar</a>
+          <a href="/miembro/{{idMiembro}}/calculadora/{{id}}" class="btn btn-primary">Huella Carbono</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+{{/partial}}
+{{> miembro/miembro.hbs }}

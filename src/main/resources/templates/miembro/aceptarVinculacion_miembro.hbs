@@ -1,0 +1,57 @@
+{{#partial "contenido" }}
+    <div class="main-container">
+
+        <div class = "form-container">
+
+            <div class="form-title-container">
+                <h1>Vinculación del trabajador</h1>
+            </div>
+            <br>
+            <br><br>
+        
+            <p> Seleccionar organizacióna a la cual pertenece, una vez enviado solicitud quedará en estado pendiente hasta que la organización seleccionada lo acepte. </p>
+            <br>
+            <form action="/action_page.php">
+                <label id="text" for="browser" >Organización:  </label>
+                <input list="browsers" name="browser">
+                <datalist id="browsers">
+                    <option value="CENTRO DE ESTUDIOS LEGALES Y SOCIALES">
+                    <option value="ASAMBLEA PERMANENTE POR LOS DERECHOS HUMANOS">
+                    <option value="ASOCIACIÓN ABUELAS DE PLAZA DE MAYO">
+                    <option value="OFICINA ANTICORRUPCION">
+                    <option value="SECRETARIA DE DERECHOS HUMANOS DE LA NACION">
+                </datalist>
+              
+            </form>
+    
+            <br>
+            
+            <br>
+            <form action="/">
+                <label for="upload" id="upload-btn">
+                <span id="text">Volver a menu</span>
+                </label>
+                <input type="file" name="upload" id="upload">
+
+                
+            </form>        
+        
+        </div>
+    </div>
+
+    <button id="submit">
+            Enviar solicitud
+      </button>
+
+    <div id="modal_container" class="modal-container">
+        <div class="modal">
+          <p>Vinculación estado pendiente </p>
+         <br>
+          <button id="close">Cerrar</button>
+        </div>
+      </div>
+      <script src="js/alertaVinculación.js"></script> 
+      
+    </body>
+{{/partial}}
+{{>miembro/miembro.hbs }}

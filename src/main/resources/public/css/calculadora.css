@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.main{
+    margin: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    background-color: white;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.calc-button{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.calc-button button{
+    background-color: #007f5f;
+    color: white;
+    font-size: 20px;
+    font-family: Lato,sans-serif;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+}
+
+.calc-button button:hover{
+    cursor: pointer;
+    background-color: #007f5fca;
+}
+
+.detalle{
+    color: rgb(141, 135, 135);
+    font-size: 15px;
+    font-family: Lato, sans-serif;
+}
+
+/*------------- KPI RESULTADOS --------------------*/
+
+.round-border{
+    border-radius: 10px;
+}
+
+.resultados{
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    /*display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;*/
+    margin-top: 20px;
+    color: white;
+}
+
+.resultados h4{
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.hc{
+    padding: 10px;
+    background-color: #935e38;
+    width: 400px;
+    margin: 10px;
+}
+
+.valor{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: center;
+    padding: 10px;
+}
+
+h1.valor-numero{
+    font-size: 70px;
+}
+
+h2.valor-unidad{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/*--------------- DETALLE POR SECTOR  ------------------------*/
+
+.hc-sectores{
+    margin-top: 20px;
+    font-family: Lato, sans-serif;
+}
+
+.sectores{
+    margin: 10px 0 10px 0;
+    background-color: #ffedd8;    
+}
+
+.sectores li{
+    margin-bottom: 5px;
+    padding: 15px;
+    border-bottom: 1px solid #7f4e2438;
+}
+
+.sectores li:last-child{
+    border-bottom: none;
+}
+
+.sector-info h5{
+    display: inline-block;
+    width: 70%;
+}
+.sector-info span{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+@media (max-width : 705px) {
+    .calc-button{
+        justify-content: center;
+    }
+
+    .detalle{
+        text-align: center;
+    }
+
+
+}

@@ -1,0 +1,38 @@
+{{#partial "contenido"}}
+<div class="container">
+    <p class="font-monospace">Suba el archivo con formato .xlxs haciendo click en "Choose File". Recuerde que el formato
+        a utilizar es como se muestra en la figura</p>
+
+    <img src="/img/mediciones/formatoExcel.png">
+
+    <form method='post' enctype='multipart/form-data'>
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03" name="">Enviar</button>
+            <input type="file" class="form-control" name="excel">
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Actividades</th>
+                <th scope="col">Tipo de consumo</th>
+                <th>Valor</th>
+                <th>Periocidad</th>
+                <th>Periodo de imputacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each mediciones}}
+            <tr>
+                <td>{{actividad}}</td>
+                <td>{{tipoDeConsumo}}</td>
+                <td>{{valor}}</td>
+                <td>{{periodicidad}}</td>
+                <td>{{periodoDeImputacion}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{/partial}}
+{{>organizaciones/organizacion-base.hbs}}

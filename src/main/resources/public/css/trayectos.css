@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+h4{
+    text-align: left;
+}
+
+th{
+    font-weight: 600;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40
+}
+
+.location-column{
+    width: 0.75rem;
+}
+
+/*
+.main{
+    margin: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.titulo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btton{
+   
+    font-family: Lato,sans-serif;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+    text-transform: uppercase;
+}
+.btton:hover,.btton:link{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-principal{
+    background-color: #007f5f;
+    color: white;
+    font-size: 20px;
+}
+.button-principal:hover{
+    background-color: #007f5fca;
+    color: white;
+}
+
+.button-secundario{
+    background-color: #5a5a5a;
+    color: white;
+    font-size: 25px;
+}
+.button-secundario:hover{
+    background-color: #747474;
+    color:white;
+}
+*/

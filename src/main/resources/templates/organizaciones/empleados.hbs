@@ -1,0 +1,26 @@
+{{#partial "contenido" }}
+<div class="container">
+    <div class="d-flex justify-content-md-between align-items-center">
+        <h2>Empleados</h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Organización</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each empleados}}
+            <tr>
+                <td> {{this.miembro.apellido}} {{this.miembro.nombre}}</td>
+                <td>
+                    {{this.miembro.dni}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+{{/partial}}
+{{> organizaciones/organizacion-base.hbs }}

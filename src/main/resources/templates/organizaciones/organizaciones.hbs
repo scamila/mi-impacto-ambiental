@@ -1,0 +1,19 @@
+{{#partial "contenido" }}
+<div class="row">
+  {{#each organizaciones}}
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+
+        <h5 class="card-title">{{razonSocial}}</h5>
+        <p class="card-text">{{tipo}}</p>
+        <a href="/organizaciones/{{id}}/mediciones" class="btn btn-primary">Editar</a>
+        <a href="/organizaciones/{{id}}/huellaCarbono" class="btn btn-primary">Huella Carbono</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/partial}}
+{{> base_bootstrap.hbs }}
+{{!--REVISAR A QUIEN SE LE MUESTRA ESTE TEMPLATE--}}

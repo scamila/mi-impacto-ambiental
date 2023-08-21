@@ -1,0 +1,68 @@
+{{#partial "contenido" }}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each empleados}}
+    <tr>
+      <td>{{this.miembro.nombre}}</td>
+      <td>{{this.miembro.apellido}}</td>
+      <td>{{this.estado}}</td>
+      <td>  <form id="formAceptar" name="myformAceptar" method="POST" onsubmit="submitAceptar()"; action="/organizaciones/{{idOrganizacion}}/vinculacion-aceptar?idEmpleado={{this.id}}">
+                  <input id = "boton_aceptar" class="btn btn-primary" type="submit" name="accept"  value="Aceptar" onclick = "onSubmitAceptar()" >
+                  <div id="cartel_aceptado"  style= "display:none" class="alert alert-success fade show" role="alert">
+                        Aceptado
+                  </div>
+            </form>
+            <form id="formRechazar" name="myFormRechazar" method="POST" onsubmit="submitRechazar()"; action="/organizaciones/{{idOrganizacion}}/vinculacion-rechazar?idEmpleado={{this.id}}">
+                  <input id = "boton_rechazar" class="btn btn-primary" type="submit" name="rechazar" value="Rechazar" onclick = "onSubmitRechazar()">
+                  <div id="cartel_rechazado" style= "display:none" class="alert alert-danger fade show" role="alert">
+                        Rechazado
+                  </div>
+            </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<script>
+
+function submitAceptar(){
+document.getElementById("formAceptar").submit();
+}
+function submitRechazar(){
+document.getElementById("formRechazar").submit();
+}
+function onSubmitAceptar(){
+
+     document.getElementById("cartel_aceptado").style.display = "block";
+
+     document.getElementById("boton_aceptar").style.display = "none";
+     document.getElementById("boton_rechazar").style.display = "none";
+
+}
+
+
+function submit(e){
+    e.preventDefault();
+}
+
+function onSubmitRechazar(){
+
+   document.getElementById("cartel_rechazado").style.display = "block";
+
+     document.getElementById("boton_aceptar").style.display = "none";
+     document.getElementById("boton_rechazar").style.display = "none";
+
+}
+
+
+</script
+{{/partial}}
+{{>organizaciones/organizacion-base.hbs }}

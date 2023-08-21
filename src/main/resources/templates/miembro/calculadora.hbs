@@ -1,0 +1,27 @@
+{{#partial "contenido"}}
+<div class="container">
+    <div class="d-flex justify-content-md-between align-items-center">
+        <h2>Calculadora de huella de carbono</h2>
+        <a class="btn btn-success" href="#">CALCULAR</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+            <div class="card rounded-3 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">RESULTADO PERSONAL</h5>
+                <h1>{{huella}}<span style="font-size: 15px;">gCO2eq</span></h1>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card rounded-3 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">IMPACTO SOBRE LA ORGANIZACION</h5>
+                <h1>{{impacto}}<span style="font-size: 15px;">%</span></h1>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{> miembro/miembro.hbs }}
